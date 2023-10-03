@@ -1,3 +1,5 @@
+Alunos: Daniel Vitor da Silva e Victor Eduardo Pogere Prudente de Almeida
+
 # ProjetoFrontend4PerSi
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
