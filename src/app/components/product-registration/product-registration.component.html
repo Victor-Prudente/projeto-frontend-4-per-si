@@ -1,0 +1,37 @@
+<form (ngSubmit)="saveProduct()">
+  <div>
+    <label for="desc">Descrição do Produto:</label>
+    <input type="text" id="desc" [(ngModel)]="product.desc" name="desc" required>
+  </div>
+
+  <div>
+    <label for="value">Valor:</label>
+    <input type="number" id="value" [(ngModel)]="product.value" name="value" required>
+  </div>
+  <div>
+    <label for="stock">Estoque:</label>
+    <input type="number" id="stock" [(ngModel)]="product.stock" name="stock" required>
+  </div>
+  <div>
+    <label for="measurementUnity">Unidade de Medida:</label>
+    <select id="measurementUnity" [(ngModel)]="product.measurementUnity" name="measurementUnity" required>
+      <option value="l">Litro</option>
+      <option value="m">Metro</option>
+      <option value="un">Unidade</option>
+      <option value="g">Grama</option>
+      <option value="cx">Caixa</option>
+    </select>
+  </div>
+  <div>
+    <label for="provider">Fornecedor:</label>
+    <select id="provider" [(ngModel)]="product.provider" name="provider" required>
+      <option value="provider1">Fornecedor 1</option>
+      <option value="provider2">Fornecedor 2</option>
+      <option value="provider3">Fornecedor 3</option>
+    </select>
+  </div>
+  <div>
+    <label for="active">Ativo:</label>
+    <input type="checkbox" id="active" [(ngModel)]="product.active" name="active">
+  </div>
+  <button type="submit">Salvar</button>
