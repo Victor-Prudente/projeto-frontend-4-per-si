@@ -1,0 +1,92 @@
+<header>
+  <h1>Cadastro de Produtos</h1>
+</header>
+
+<form (ngSubmit)="saveProduct()">
+  <div class="form-group">
+    <label for="desc">Descrição do Produto:</label>
+    <input type="text" id="desc" [(ngModel)]="product.desc" name="desc" required class="form-control" [class.is-invalid]="showAlert && !product.desc">
+    <div *ngIf="showAlert && !product.desc" class="invalid-feedback">
+      Por favor, preencha a descrição.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="value">Valor:</label>
+    <input type="number" id="value" [(ngModel)]="product.value" name="value" required class="form-control" [class.is-invalid]="showAlert && !product.value">
+    <div *ngIf="showAlert && !product.value" class="invalid-feedback">
+      Por favor, preencha o valor.
+    </div>
+  </div>
+
+
+
+  <div class="form-group">
+    <label for="value">Estoque:</label>
+    <input type="number" id="stock" [(ngModel)]="product.stock" name="stock" required class="form-control" [class.is-invalid]="showAlert && !product.value">
+    <div *ngIf="showAlert && !product.value" class="invalid-feedback">
+      Por favor, preencha o Estoque.
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="measurementUnity">Unidade de Medida:</label>
+    <select id="measurementUnity" [(ngModel)]="product.measurementUnity" name="measurementUnity" required class="form-control" [class.is-invalid]="showAlert && !product.measurementUnity">
+
+      <option value="l">Litro</option>
+      <option value="m">Metro</option>
+      <option value="un">Unidade</option>
+      <option value="g">Grama</option>
+      <option value="cx">Caixa</option>
+    </select>
+    <div *ngIf="showAlert && !product.measurementUnity" class="invalid-feedback">
+      Por favor, preencha a Unidade de Medida
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="provider">Fornecedor:</label>
+    <select id="provider" [(ngModel)]="product.provider" name="provider" required class="form-control" [class.is-invalid]="showAlert && !product.provider">
+      <option value="Fornecedor 1">Fornecedor 1</option>
+      <option value="Fornecedor 2">Fornecedor 2</option>
+      <option value="Fornecedor 3">Fornecedor 3</option>
+    </select>
+    <div *ngIf="showAlert && !product.provider" class="invalid-feedback">
+      Por favor, preencha o Fornecedor
+    </div>
+  </div>
+
+  <div>
+    <label for="active">Ativo:</label>
+    <input type="checkbox" id="active" [(ngModel)]="product.active" name="active">
+  </div>
+  <button type="submit">Salvar</button>
+
+
+
+  <div>
+    <h2>Lista de Produtos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Valor</th>
+          <th>Estoque</th>
+          <th>Unidade de Medida</th>
+          <th>Fornecedor</th>
+          <th>Ativo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.desc }}</td>
+          <td>{{ product.value }}</td>
+          <td>{{ product.stock }}</td>
+          <td>{{ product.measurementUnity }}</td>
+          <td>{{ product.provider }}</td>
+          <td>{{ product.active ? 'Sim' : 'Não' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
