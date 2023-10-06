@@ -40,6 +40,10 @@
   </div>
   <button type="submit">Salvar</button>
 
+  <div *ngIf="showAlert" class="alert alert-danger">
+    Preencha os campos Valor e Estoque com valor válido!
+  </div>
+
   <div>
     <h2>Lista de Produtos</h2>
     <table>

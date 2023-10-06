@@ -1,7 +1,7 @@
 export interface Product {
   desc: string;
-  value: number;
-  stock: number;
+  value: null;
+  stock: null;
   measurementUnity: string;
   provider: string;
   active: boolean;

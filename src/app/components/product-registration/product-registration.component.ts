@@ -9,8 +9,8 @@ import { Product } from './model/product.model';
 export class ProductRegistrationComponent {
   product: Product = {
     desc: '',
-    value: 0,
-    stock: 0,
+    value: null,
+    stock: null,
     measurementUnity: '',
     provider: '',
     active: false,
@@ -18,19 +18,24 @@ export class ProductRegistrationComponent {
   productSaved: Product | null = null;
 
   products: Product[] = [];
-
+  showAlert = false;
   saveProduct() {
-    this.products.push({ ...this.product });
-    console.log(this.productSaved);
-    localStorage.setItem('products', JSON.stringify(this.products));
+    if (this.product.value !== null && this.product.stock !== null) {
+      this.products.push({ ...this.product });
+      console.log(this.productSaved);
+      localStorage.setItem('products', JSON.stringify(this.products));
 
-    this.product = {
-      desc: '',
-      value: 0,
-      stock: 0,
-      measurementUnity: '',
-      provider: '',
-      active: false,
-    };
+      this.product = {
+        desc: '',
+        value: null,
+        stock: null,
+        measurementUnity: '',
+        provider: '',
+        active: false,
+      };
+      this.showAlert = false;
+    } else {
+      this.showAlert = true;
+    }
   }
 }
