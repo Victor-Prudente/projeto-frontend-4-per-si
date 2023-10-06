@@ -17,12 +17,20 @@ export class ProductRegistrationComponent {
   };
   productSaved: Product | null = null;
 
-  
   products: Product[] = [];
 
   saveProduct() {
     this.products.push({ ...this.product });
     console.log(this.productSaved);
     localStorage.setItem('products', JSON.stringify(this.products));
+
+    this.product = {
+      desc: '',
+      value: 0,
+      stock: 0,
+      measurementUnity: '',
+      provider: '',
+      active: false,
+    };
   }
 }
