@@ -16,8 +16,13 @@ export class ProductRegistrationComponent {
     active: false,
   };
   productSaved: Product | null = null;
+
+  
+  products: Product[] = [];
+
   saveProduct() {
-    this.productSaved = { ...this.product };
+    this.products.push({ ...this.product });
     console.log(this.productSaved);
+    localStorage.setItem('products', JSON.stringify(this.products));
   }
 }
