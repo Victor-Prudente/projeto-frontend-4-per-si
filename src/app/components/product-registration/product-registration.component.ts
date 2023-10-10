@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Product } from './model/product.model';
+import { Product } from '../models/product.model';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-product-registration',
@@ -15,15 +16,14 @@ export class ProductRegistrationComponent {
     provider: '',
     active: false,
   };
-  productSaved: Product | null = null;
 
-  products: Product[] = [];
   showAlert = false;
+
+  constructor(private productService: ProductService) {}
+
   saveProduct() {
     if (this.isFormValid()) {
-      this.products.push({ ...this.product });
-      console.log(this.productSaved);
-      localStorage.setItem('products', JSON.stringify(this.products));
+      this.productService.addProduct({ ...this.product });
 
       this.product = {
         desc: '',
@@ -38,6 +38,7 @@ export class ProductRegistrationComponent {
       this.showAlert = true;
     }
   }
+
   isFormValid(): boolean {
     return (
       this.product.desc !== '' &&

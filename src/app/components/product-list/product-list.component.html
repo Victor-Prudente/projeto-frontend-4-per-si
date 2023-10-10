@@ -1,0 +1,23 @@
+<h2 class="title-product2">Produtos</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Estoque</th>
+            <th>Unidade de Medida</th>
+            <th>Fornecedor</th>
+            <th>Ativo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{ product.desc }}</td>
+            <td>{{ product.value }}</td>
+            <td>{{ product.stock }}</td>
+            <td>{{ product.measurementUnity }}</td>
+            <td>{{ product.provider }}</td>
+            <td>{{ product.active ? 'Sim' : 'Não' }}</td>
+        </tr>
+    </tbody>
+</table>
