@@ -1,32 +1,6 @@
-.container {
-  width: 80%;
-  height: 95vh;
-  margin: auto;
-  margin-top: 10px;
-  display: flex;
-}
-
-.left-column {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #D3D3D3;
-}
-
-.right-column {
-  width: 50%;
-  background-color: #DCDCDC;
-  text-align: center;
-}
-
-
 form {
-  background-color: #fff;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  height: 90%;
 }
 
 .title-product {
@@ -65,57 +39,4 @@ button {
   font-size: 16px;
   cursor: pointer;
   margin-top: 10px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-
-table, th, td {
-  border: 1px solid #ccc;
-}
-
-th, td {
-  padding: 8px;
-  text-align: left;
-}
-
-th {
-  background-color: #007bff;
-  color: #fff;
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-    flex-direction: row;
-  }
-  .left-column,
-  .right-column {
-    flex: 1;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .container {
-    flex-direction: column;
-  }
-  .left-column,
-  .right-column {
-    width: 100%;
-  }
-  table {
-    width: 100%;
-  }
-
-  th, td {
-    display: block;
-    width: 100%;
-  }
-
-  th {
-    background-color: #007bff;
-    color: #fff;
-  }
 }

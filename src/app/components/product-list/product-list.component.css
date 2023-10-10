@@ -1,0 +1,18 @@
+th,td {
+  border: 1px solid black;
+}
+
+th {
+  color: white;
+  background-color: royalblue;
+}
+
+@media screen and (max-width: 767px) {
+  table {
+    width: 100%;
+    overflow-x: auto;
+  }
+  th, td {
+    padding: 1px;
+  }
+}
